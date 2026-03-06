@@ -1,0 +1,217 @@
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* EKRAN DÜZENÝ */
+.battle-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.p-card {
+    border: 4px solid #fff;
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+    background: #000;
+    flex-shrink: 0;
+}
+
+.active-turn {
+    border-color: #ff0 !important;
+    box-shadow: 0 0 15px #ff0;
+}
+
+/* LOG */
+.log-box {
+    width: 280px;
+    height: 320px;
+    border: 4px double #fff;
+    padding: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+#log-content div {
+    color: #0f0;
+    font-size: 13px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #222;
+}
+
+/* DETERMINATION YAZILARI - KESÝN AYRIM */
+#det-txt-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+.det-line {
+    display: block !important;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    min-height: 1.5em;
+    color: white;
+}
+
+.red-det {
+    color: #f00 !important;
+    font-size: 38px !important;
+    font-weight: bold;
+}
+
+/* HAFÝF SARSILMA */
+.shake {
+    animation: shake-anim 0.15s ease-in-out;
+}
+
+
+.hp-bar {
+    width: 100%;
+    height: 20px;
+    background: #c00;
+    border: 2px solid #fff;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.hp-fill {
+    height: 100%;
+    background: #ff0;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.hp-label {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 20px;
+}
+
+.st-bar {
+    height: 8px;
+    border: 1px solid #fff;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.st-fill {
+    background: #0f0;
+    height: 100%;
+    width: 100%;
+}
+
+.full-overlay {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.u-btn {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    margin: 3px;
+    font-size: 12px;
+}
+
+.perk-tag {
+    font-size: 10px;
+    color: yellow;
+    display: block;
+    margin-top: 5px;
+}
+/* SPECIAL ATTACK KUTUSU */
+#special-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-boundary {
+    border: 6px solid #fff; /* Kutunun beyaz çerçevesi */
+    background: #000;
+    line-height: 0; /* Boþluklarý siler */
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+#bBox {
+    display: block;
+    background: #000;
+}
+
+/* ÝSÝM BOZULMA (GLITCH) EFEKTÝ */
+.glitch {
+    color: #ff0000 !important;
+    text-shadow: 2px 0 #00ffff, -2px 0 #ff00ff;
+    animation: glitch-anim 0.2s infinite;
+    position: relative;
+}
+
+@keyframes glitch-anim {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+.box-boundary {
+    border: 6px solid #fff;
+    background: #000;
+    margin: auto; /* Ortala */
+    display: block;
+    line-height: 0;
+}

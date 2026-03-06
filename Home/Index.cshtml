@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Underbattle v6.5 Ultimate</title>
+    <link rel="stylesheet" href="site.css">
+</head>
+<body id="game-body">
+
+    <div id="main-menu" class="full-overlay">
+        <h1 class="title">UNDERBATTLE</h1>
+        <div class="menu-box">
+            <button class="u-btn" onclick="showLobby('pvp')">1 VS 1 MODU</button>
+            <button class="u-btn" onclick="showLobby('ai')">SANS AI (VS PC)</button>
+        </div>
+    </div>
+
+    <div id="lobby" class="full-overlay" style="display:none;">
+        <div class="lobby-grid">
+            <div class="p-setup">
+                <input type="text" id="p1-name" value="SANS">
+                <div id="p1-list" class="perk-container"></div>
+            </div>
+            <div class="p-setup">
+                <input type="text" id="p2-name" value="CHARA">
+                <div id="p2-list" class="perk-container"></div>
+            </div>
+        </div>
+        <button class="u-btn start-btn" onclick="startBattle()">SAVAŞI BAŞLAT</button>
+    </div>
+
+    <div id="battle-screen" class="battle-layout" style="display:none;">
+        <div id="card1" class="p-card">
+            <h2 id="n1">PLAYER 1</h2>
+            <div class="hp-bar"><div id="f1" class="hp-fill"></div><div id="hp-t1" class="hp-label"></div></div>
+            <div id="st1-cont" class="st-bar"><div id="s1" class="st-fill"></div></div>
+            <div class="btns">
+                <button onclick="act(1, 'atk')">SALDIR</button>
+                <button id="heal1" onclick="act(1, 'heal')">YE (3)</button>
+                <button id="sp1" class="sp-atk-btn" onclick="special(1)" style="display:none;">ÖZEL GÜÇ</button>
+            </div>
+        </div>
+
+        <div class="log-box"><div id="log-content"></div></div>
+
+        <div id="card2" class="p-card">
+            <h2 id="n2">PLAYER 2</h2>
+            <div class="hp-bar"><div id="f2" class="hp-fill"></div><div id="hp-t2" class="hp-label"></div></div>
+            <div id="st2-cont" class="st-bar"><div id="s2" class="st-fill"></div></div>
+            <div class="btns">
+                <button onclick="act(2, 'atk')">SALDIR</button>
+                <button id="heal2" onclick="act(2, 'heal')">YE (3)</button>
+                <button id="sp2" class="sp-atk-btn" onclick="special(2)" style="display:none;">ÖZEL GÜÇ</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="special-overlay" class="full-overlay" style="display:none; background: rgba(0,0,0,0.9);">
+        <div class="box-boundary">
+            <canvas id="bBox" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+    <div id="det-overlay" class="full-overlay" style="display:none;">
+        <div id="det-txt-container"></div>
+    </div>
+
+    <script src="site.js"></script>
+</body>
+</html>
